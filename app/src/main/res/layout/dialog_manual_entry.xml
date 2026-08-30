@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPayeeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="UPI ID (name@bank) or 10-digit mobile number"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvHandleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipient\'s UPI app / bank"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spHandle"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPayeeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Payee name (optional, for your records)"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvManualWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textSize="13sp"
+            android:text="We can\'t verify who a manually entered UPI ID or phone number belongs to. Your UPI app will show the payee\'s name before you approve the payment - always check it matches before confirming."/>
+    </LinearLayout>
+</ScrollView>
