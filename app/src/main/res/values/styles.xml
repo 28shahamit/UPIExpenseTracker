@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- windowLightStatusBar/windowLightNavigationBar (dark icons) only apply on API 23+ /
+         API 27+ respectively, which is within this app's minSdk 23 - on the few devices
+         below the nav-bar cutoff the icons simply stay their default color. Pairing dark
+         icons with an explicit light statusBarColor/navigationBarColor (rather than leaving
+         either transparent) is what keeps the system's own clock/battery/notification icons
+         legible against every screen, instead of blending into whatever content is drawn
+         at the very top/bottom of each screen. -->
+    <!-- Deliberately Light, not DayNight: every screen in this app uses fixed light
+         colors (colors.xml has no values-night variants), but dialogs/menus inherit
+         their look from the theme's day/night mode independently of that. Under
+         DayNight, a phone in system dark mode kept this app's own screens light while
+         every AlertDialog (edit expense, add category, quick payee name, etc.) flipped
+         to a dark background - and the plain/Material inputs inside those dialogs did
+         not follow, so they rendered as pale, low-contrast boxes on a dark sheet. Pinning
+         Light keeps dialogs visually consistent with the rest of the app until the whole
+         app is deliberately given a real dark theme. -->
+    <style name="Theme.UPIExpenseTracker" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#6750A4</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

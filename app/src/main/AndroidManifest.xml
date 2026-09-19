@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Required on Android 11+ (API 30+) package visibility: without this, the
+         PackageManager can't see UPI apps like Navi/Paytm/GPay/PhonePe, so
+         Intent.createChooser() for a upi:// URI resolves to zero apps and
+         ActivityNotFoundException is thrown even when they're installed. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="upi" />
+        </intent>
+
+        <!-- MainActivity#openUpiAppToPayManually() looks up each app below by exact
+             package name via PackageManager.getLaunchIntentForPackage(). That call does
+             its own internal query (ACTION_MAIN/CATEGORY_LAUNCHER filtered to just that
+             package) which the <intent> element above does NOT cover - filtered-by-scheme
+             queries only grant visibility for matching that filter, not for by-package
+             lookups. Without a <package> entry per app, getLaunchIntentForPackage()
+             silently returns null for every one of them (never throws), so "installed"
+             always comes back empty and users see "No supported UPI app found installed."
+             even with the app present and working via the generic upi:// chooser above.
+             Keep this list in sync with KNOWN_UPI_APPS in MainActivity.java. -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <package android:name="com.phonepe.app" />
+        <package android:name="net.one97.paytm" />
+        <package android:name="com.naviapp" />
+        <package android:name="in.org.npci.upiapp" />
+        <package android:name="in.amazon.mShop.android.shopping" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.dreamplug.androidapp" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:label="UPI Expense Tracker"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UPIExpenseTracker">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AccountsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+    </application>
+</manifest>
