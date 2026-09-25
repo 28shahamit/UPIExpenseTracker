@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fill color is set at runtime via setBackgroundTintList() per category. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/brand_primary"/>
+    <corners android:radius="6dp"/>
+</shape>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Background gradient replacement: just a solid color shape -->
+    <path android:fillColor="#5B47C9" android:pathData="M0,0 L108,0 L108,108 L0,108 Z"/>
+    <!-- Wallet icon -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M30,36 h48 a10,10 0 0 1 10,10 v32 a10,10 0 0 1 -10,10 h-48 a10,10 0 0 1 -10,-10 v-32 a10,10 0 0 1 10,-10 z"/>
+    <path android:fillColor="#5B47C9" android:pathData="M30,44 h48 a2,2 0 0 1 2,2 v28 a2,2 0 0 1 -2,2 h-48 a2,2 0 0 1 -2,-2 v-28 a2,2 0 0 1 2,-2 z"/>
+    <!-- Rupee symbol -->
+    <path android:fillColor="#FFD54F" android:pathData="M44,50 h12 v3 h-12 z M44,56 h12 v3 h-12 z M46,50 v18 h3 c5,0 8,-2 8,-6 h-3 c0,2 -1,3 -3,3 h0 v-4 h4 c1,0 2,-1 2,-2 s-1,-2 -2,-2 h-4 v-3 h5 c3,0 4,1 4,3 h3 c0,-4 -3,-6 -8,-6 h-8 z"/>
+</vector>
