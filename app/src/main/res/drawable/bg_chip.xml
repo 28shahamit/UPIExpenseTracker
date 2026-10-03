@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Solid color is set at runtime via setBackgroundTintList() per status/category. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/surface_alt"/>
+    <corners android:radius="14dp"/>
+</shape>
