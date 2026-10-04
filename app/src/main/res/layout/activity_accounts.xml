@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/surface_alt">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_header_gradient_flat"
+        android:elevation="6dp"
+        app:title="Bank accounts"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationIconTint="@color/white"
+        app:elevation="2dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap an account to make it the default - every payment or log-only entry uses whichever one is marked Default. Balances update automatically as you pay and can go negative."
+                android:textSize="13sp"
+                android:textColor="@color/on_surface_secondary"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvNoAccounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No accounts yet. Add one below."
+                android:textColor="@color/on_surface_secondary"
+                android:gravity="center"
+                android:padding="24dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/llAccounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <Button
+                android:id="@+id/btnAddAccount"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+ Add account"
+                android:textAllCaps="false"
+                app:cornerRadius="24dp"
+                android:minHeight="50dp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Backup &amp; restore"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/on_surface_secondary"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save all accounts, expenses, categories and budgets to a file - handy since reinstalling a new build wipes app data."
+                android:textSize="12.5sp"
+                android:textColor="@color/on_surface_secondary"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnBackup"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Export backup"
+                android:textAllCaps="false"
+                android:minHeight="50dp"/>
+
+            <Button
+                android:id="@+id/btnRestore"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Restore backup"
+                android:textAllCaps="false"
+                android:minHeight="50dp"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/brand_primary"
+        app:itemTextColor="@color/brand_primary"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/surface"/>
+</LinearLayout>
