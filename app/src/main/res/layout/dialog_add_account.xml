@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+        <TextView android:id="@+id/tvDlgTitle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textSize="19sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+        <TextView android:id="@+id/btnDlgClose" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:text="\u2715" android:textSize="18sp" android:textColor="@color/on_surface_secondary" android:clickable="true" android:focusable="true"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/tilName" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp">
+        <TextView android:id="@+id/lblName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Account name" android:textSize="13sp" android:textColor="@color/on_surface_secondary" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etAccName" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_quick_action_tile" android:paddingStart="14dp" android:paddingEnd="14dp" android:textSize="14.5sp" android:singleLine="true" android:inputType="textCapWords"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/tilLast4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp">
+        <TextView android:id="@+id/lblLast4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Last 4 digits (optional)" android:textSize="13sp" android:textColor="@color/on_surface_secondary" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etAccLast4" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_quick_action_tile" android:paddingStart="14dp" android:paddingEnd="14dp" android:textSize="14.5sp" android:singleLine="true" android:inputType="number" android:maxLength="4" android:hint="e.g. 1234"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/tilUpi" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp">
+        <TextView android:id="@+id/lblUpi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UPI IDs (optional)" android:textSize="13sp" android:textColor="@color/on_surface_secondary" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etAccUpi" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_quick_action_tile" android:paddingStart="14dp" android:paddingEnd="14dp" android:textSize="14.5sp" android:singleLine="true" android:inputType="textEmailAddress" android:hint="e.g. amit@axl, amit@ybl"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/tilBal" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp">
+        <TextView android:id="@+id/lblBal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Starting balance (\u20B9)" android:textSize="13sp" android:textColor="@color/on_surface_secondary" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etAccBalance" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_quick_action_tile" android:paddingStart="14dp" android:paddingEnd="14dp" android:textSize="14.5sp" android:singleLine="true" android:inputType="numberDecimal|numberSigned" android:hint="0.00"/>
+    </LinearLayout>
+    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swDefault" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Set as default account" android:textSize="14sp" android:visibility="gone"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical|end">
+        <Button android:id="@+id/btnDlgCancel" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cancel" android:textAllCaps="false"/>
+        <Button android:id="@+id/btnDlgOk" android:layout_width="wrap_content" android:layout_height="52dp" android:layout_marginStart="10dp" android:minWidth="150dp" android:textAllCaps="false" android:textSize="15sp" app:cornerRadius="14dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvCbEmoji"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.35"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvCbName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/on_surface"/>
+            <TextView
+                android:id="@+id/tvCbAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/on_surface_secondary"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flCbTrack"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_progress_track"/>
+            <View
+                android:id="@+id/vCbFill"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@drawable/bg_progress_fill"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvCbPct"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCbSet"
+            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:gravity="end"
+            android:paddingStart="4dp"
+            android:textColor="@color/brand_primary"
+            android:textStyle="bold"
+            android:textSize="13.5sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u203A"
+            android:textSize="20sp"
+            android:paddingStart="4dp"
+            android:textColor="@color/on_surface_secondary"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+</LinearLayout>

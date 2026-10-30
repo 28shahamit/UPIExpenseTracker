@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Account" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/on_surface" android:layout_marginBottom="2dp"/>
+    <LinearLayout android:id="@+id/optBank" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:padding="14dp" android:background="@drawable/bg_sheet_row" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <TextView android:layout_width="52dp" android:layout_height="52dp" android:gravity="center" android:text="🏦" android:textSize="24sp" android:background="@drawable/bg_circle" android:backgroundTint="#1A56DB"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bank Account" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Savings, Current, etc." android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\u203A" android:textSize="26sp" android:textColor="@color/on_surface_secondary"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/optWallet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:padding="14dp" android:background="@drawable/bg_sheet_row" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <TextView android:layout_width="52dp" android:layout_height="52dp" android:gravity="center" android:text="💳" android:textSize="24sp" android:background="@drawable/bg_circle" android:backgroundTint="#7C3AED"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wallet / UPI Lite" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PhonePe, Paytm, etc." android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\u203A" android:textSize="26sp" android:textColor="@color/on_surface_secondary"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/optCash" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:padding="14dp" android:background="@drawable/bg_sheet_row" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <TextView android:layout_width="52dp" android:layout_height="52dp" android:gravity="center" android:text="💵" android:textSize="24sp" android:background="@drawable/bg_circle" android:backgroundTint="#16A34A"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cash Account" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cash in hand" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\u203A" android:textSize="26sp" android:textColor="@color/on_surface_secondary"/>
+    </LinearLayout>
+</LinearLayout>

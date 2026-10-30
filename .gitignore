@@ -1,0 +1,4 @@
+app/debug-signing.jks
+app/debug.keystore.jks
+*.b64
+app/release.keystore.jks

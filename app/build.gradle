@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.expensetracker.upi'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.expensetracker.upi'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    signingConfigs {
+        release {
+            // CI (GitHub Actions) supplies these via env vars sourced from repo Secrets.
+            // The hardcoded values are only a fallback so local builds keep working
+            // unchanged; don't rely on them once this repo has any real distribution.
+            storeFile file(System.getenv('KEYSTORE_FILE') ?: 'release.keystore.jks')
+            storePassword System.getenv('KEYSTORE_PASSWORD') ?: 'changeit123'
+            keyAlias System.getenv('KEY_ALIAS') ?: 'upiexpensetracker'
+            keyPassword System.getenv('KEY_PASSWORD') ?: 'changeit123'
+        }
+        debug {
+            // The stable debug key lives only in GitHub Actions Secrets (never in the repo) -
+            // see .github/workflows/android-build.yml, which decodes it and sets these env vars.
+            // Without a pinned key, every CI run (fresh VM) generates a new random debug key, so
+            // each APK has a different signature and Android refuses to install it over the
+            // last one, forcing an uninstall and losing app data. When the env vars are absent
+            // (e.g. a local build), this block does nothing and Gradle's normal per-machine
+            // debug key is used.
+            def dbgFile = System.getenv('DEBUG_KEYSTORE_FILE')
+            if (dbgFile) {
+                storeFile file(dbgFile)
+                storePassword System.getenv('DEBUG_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('DEBUG_KEY_ALIAS')
+                keyPassword System.getenv('DEBUG_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.5.3'
+}

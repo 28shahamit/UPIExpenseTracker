@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:fitsSystemWindows="true" android:background="@color/surface_alt">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="0dp" android:visibility="gone"/>
+
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accounts" android:textSize="26sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage your accounts and balances" android:textSize="13.5sp" android:textColor="@color/on_surface_secondary"/>
+                </LinearLayout>
+                <TextView android:id="@+id/btnBackup" android:layout_width="wrap_content" android:layout_height="44dp" android:gravity="center" android:paddingStart="14dp" android:paddingEnd="14dp" android:text="\u2601  Backup &amp; Restore" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/brand_primary" android:background="@drawable/bg_tab_chip" android:backgroundTint="@color/brand_primary_light" android:clickable="true" android:focusable="true"/>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" app:cardElevation="0dp" app:cardCornerRadius="18dp" app:strokeWidth="1dp" app:strokeColor="@color/divider" app:cardBackgroundColor="@color/surface">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="46dp" android:layout_height="46dp" android:padding="11dp" android:layout_marginEnd="12dp" android:src="@drawable/ic_wallet" android:background="@drawable/bg_circle" android:backgroundTint="@color/brand_primary_light" app:tint="@color/brand_primary"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1.1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Balance" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+                            <TextView android:id="@+id/btnEye" android:layout_width="36dp" android:layout_height="32dp" android:gravity="center" android:text="👁" android:textSize="16sp" android:clickable="true" android:focusable="true"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="32sp" android:textStyle="bold" android:textColor="@color/status_success"/>
+                        <TextView android:id="@+id/tvTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="12.5sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:id="@+id/llLegend" android:visibility="gone" android:orientation="vertical" android:layout_gravity="center_vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingTop="5dp" android:paddingBottom="5dp"><View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_circle" android:backgroundTint="#1E7BF2" android:layout_marginEnd="10dp"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Bank Accounts" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/><TextView android:id="@+id/tvSumBank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/on_surface"/></LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingTop="5dp" android:paddingBottom="5dp"><View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_circle" android:backgroundTint="#7C3AED" android:layout_marginEnd="10dp"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Wallet / UPI Lite" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/><TextView android:id="@+id/tvSumWallet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/on_surface"/></LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingTop="5dp" android:paddingBottom="5dp"><View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_circle" android:backgroundTint="#F59E0B" android:layout_marginEnd="10dp"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Cash Accounts" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/><TextView android:id="@+id/tvSumCash" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/on_surface"/></LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_quick_action_tile">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏦  Bank" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+                    <TextView android:id="@+id/tileBank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_quick_action_tile">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💳  Wallet" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+                    <TextView android:id="@+id/tileWallet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:layout_marginEnd="0dp" android:background="@drawable/bg_quick_action_tile">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💵  Cash" android:textSize="12.5sp" android:textColor="@color/on_surface_secondary"/>
+                    <TextView android:id="@+id/tileCash" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/on_surface"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:scrollbars="none">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/chipAll" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginEnd="8dp" android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp" android:textSize="13.5sp" android:background="@drawable/bg_tab_chip" android:clickable="true" android:focusable="true"/><TextView android:id="@+id/chipBank" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginEnd="8dp" android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp" android:textSize="13.5sp" android:background="@drawable/bg_tab_chip" android:clickable="true" android:focusable="true"/><TextView android:id="@+id/chipWallet" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginEnd="8dp" android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp" android:textSize="13.5sp" android:background="@drawable/bg_tab_chip" android:clickable="true" android:focusable="true"/><TextView android:id="@+id/chipCash" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginEnd="8dp" android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp" android:textSize="13.5sp" android:background="@drawable/bg_tab_chip" android:clickable="true" android:focusable="true"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView android:id="@+id/tvNoAccounts" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No accounts yet. Add one below." android:textColor="@color/on_surface_secondary" android:gravity="center" android:padding="24dp" android:visibility="gone"/>
+            <LinearLayout android:id="@+id/llAccounts" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                <com.google.android.material.card.MaterialCardView android:id="@+id/btnAddAccount" android:layout_width="0dp" android:layout_weight="1" android:layout_height="56dp" android:layout_marginEnd="8dp" android:clickable="true" android:focusable="true" app:cardElevation="0dp" app:cardCornerRadius="16dp" app:strokeWidth="1dp" app:strokeColor="@color/divider" app:cardBackgroundColor="@color/surface"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="horizontal"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_add" app:tint="@color/brand_primary"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="Add Account" android:textStyle="bold" android:textSize="14.5sp" android:textColor="@color/on_surface"/></LinearLayout></com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:id="@+id/btnTransferAny" android:layout_width="0dp" android:layout_weight="1" android:layout_height="56dp" android:layout_marginEnd="0dp" android:clickable="true" android:focusable="true" app:cardElevation="0dp" app:cardCornerRadius="16dp" app:strokeWidth="1dp" app:strokeColor="@color/divider" app:cardBackgroundColor="@color/surface"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="horizontal"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_transfer" app:tint="@color/brand_primary"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="Transfer" android:textStyle="bold" android:textSize="14.5sp" android:textColor="@color/on_surface"/></LinearLayout></com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottomNav" android:layout_width="match_parent" android:layout_height="wrap_content" app:menu="@menu/bottom_nav_menu" app:itemIconTint="@color/brand_primary" app:itemTextColor="@color/brand_primary" app:labelVisibilityMode="labeled" android:background="@color/surface"/>
+</LinearLayout>
